@@ -1,14 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/DefaultButton';
 import { Input } from '../ui/Input';
 import DefaultBox from './DefaultBox';
+import { useRouter } from 'next/navigation';
 
-interface SearchInputProps {}
+interface SearchInputProps {
+  defaultValue?: string;
+}
 
-export default function SearchInput({}: SearchInputProps) {
+export default function SearchInput({ defaultValue }: SearchInputProps) {
   const [search, setSearch] = useState<string>('');
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -22,7 +26,8 @@ export default function SearchInput({}: SearchInputProps) {
   };
 
   const handleSubmitSearch = () => {
-    console.log(search);
+    if (search === '') return alert('검색어를 입력해주세요');
+    router.push(`/search?query=${search}`);
   };
 
   return (
@@ -34,6 +39,7 @@ export default function SearchInput({}: SearchInputProps) {
           onChange={(e) => {
             handleChange(e);
           }}
+          defaultValue={defaultValue ? defaultValue : ''}
           onKeyDown={handleKeyDown}
         />
         <Button
