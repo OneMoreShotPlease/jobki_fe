@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <div className=" flex justify-center ">
-          <div className="h-[100dvh] w-full min-w-[320px] max-w-[700px] border-2 border-solid border-green-600 text-left ">
+          <div className="h-[100dvh] w-full min-w-[320px] max-w-[700px]  text-left ">
             {children}
           </div>
         </div>
