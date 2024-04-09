@@ -1,3 +1,4 @@
+'use client';
 import { Suspense, useState, useEffect } from "react";
 import SearchInput from '@/components/common/SearchInput';
 import { useSearchParams } from 'next/navigation';
