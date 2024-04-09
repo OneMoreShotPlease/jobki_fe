@@ -1,16 +1,12 @@
-'use client';
-
+import { Suspense, useState, useEffect } from "react";
 import SearchInput from '@/components/common/SearchInput';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import RecentSearch from './_components/RecentSearch';
 import RelatedTag from './_components/RelatedTag';
 import SearchResult from './_components/SearchResult';
-import { Suspense } from "react"
 
-const Search = () => {
+const SearchContent = () => {
   const params = useSearchParams();
-
   const [search, setSearch] = useState<string>('');
 
   useEffect(() => {
@@ -18,12 +14,21 @@ const Search = () => {
       setSearch(params.get('query') ?? '');
     }
   }, [params]);
+
   return (
-    <Suspense>
+    <>
       <SearchInput defaultValue={search} />
       <RecentSearch />
       <SearchResult />
       <RelatedTag />
+    </>
+  );
+};
+
+const Search = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SearchContent />
     </Suspense>
   );
 };
