@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 // These styles apply to every route in the application
 import './globals.css';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/Avatar';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
