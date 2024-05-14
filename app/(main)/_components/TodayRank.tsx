@@ -18,16 +18,6 @@ export default function TodayRank() {
                 <CardContent className="p-4">1</CardContent>
               </Card>
             </CarouselItem>
-            <CarouselItem>
-              <Card>
-                <CardContent>2</CardContent>
-              </Card>
-            </CarouselItem>
-            <CarouselItem>
-              <Card>
-                <CardContent>3</CardContent>
-              </Card>
-            </CarouselItem>
           </CarouselContent>
         </Carousel>
       }
