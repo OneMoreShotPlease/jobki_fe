@@ -6,5 +6,5 @@ interface DefaultBoxProps {
 }
 
 export default function DefaultBox({ children }: DefaultBoxProps) {
-  return <div className="w-full pl-[16px] pr-[16px]">{children}</div>;
+  return <div className="w-full p-0">{children}</div>;
 }
