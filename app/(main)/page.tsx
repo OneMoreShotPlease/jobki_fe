@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <div className="flex h-auto w-full flex-col gap-4">
       {/* 검색창 */}
-      <SearchInput />
       {/* 오늘의 순위 */}
       <TodayRank />
       {/* 최신 등록 */}
