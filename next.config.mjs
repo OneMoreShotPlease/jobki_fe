@@ -3,7 +3,7 @@ const nextConfig = {
   eslint: {
     dirs: ['app', 'components', 'lib'],
   },
-  swcMinify: true,
+  swcMinify: false,
   compiler: {
     removeConsole: {
       exclude: ['error'],
